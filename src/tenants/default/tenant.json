@@ -1,0 +1,12 @@
+{
+  "name": "Glaxy",
+  "shortName": "Glaxy",
+  "logo": null,
+  "theme": {
+    "navBg": "#111827",
+    "navFg": "#ffffff",
+    "accent": "#facc15",
+    "primary": "#dc2626"
+  }
+}
+

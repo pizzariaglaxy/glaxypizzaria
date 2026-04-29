@@ -1,0 +1,13 @@
+{
+  "name": "Glaxy Pizzaria Delivery",
+  "shortName": "GLAXY",
+  "logo": "src/public/assets/logo/logo_glaxy.png",
+  "logoName": "src/public/assets/logo/logo_name.png",
+  "theme": {
+    "navBg": "#0b0f19",
+    "navFg": "#ffffff",
+    "accent": "#facc15",
+    "primary": "#dc2626"
+  }
+}
+

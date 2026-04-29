@@ -6,6 +6,9 @@
       if (qp && qp.trim()) return qp.trim().toLowerCase();
       const host = (window.location.hostname || '').toLowerCase();
       const parts = host.split('.').filter(Boolean);
+      if (parts.length >= 3 && parts[parts.length - 2] === 'pages' && parts[parts.length - 1] === 'dev') {
+        return parts[parts.length - 3];
+      }
       if (parts.length >= 3) return parts[0];
       return null;
     } catch {
@@ -13,12 +16,17 @@
     }
   };
 
-  const tenantId = parseTenantFromUrl() || 'glaxy';
+  const TENANT_ALIASES = {
+    glaxypizzaria: 'glaxy'
+  };
+
+  const rawTenantId = parseTenantFromUrl() || 'glaxy';
+  const tenantId = TENANT_ALIASES[rawTenantId] || rawTenantId;
 
   const BUILTIN_TENANTS = {
     default: {
-      name: 'PizzaOS',
-      shortName: 'PizzaOS',
+      name: 'Glaxy Pizzaria Delivery',
+      shortName: 'Glaxy',
       logo: null,
       logoName: null,
       theme: { navBg: '#111827', navFg: '#ffffff', accent: '#facc15', primary: '#dc2626' }
@@ -35,8 +43,8 @@
   const tenant = {
     id: tenantId,
     storagePrefix: `tenant:${tenantId}:`,
-    name: 'PizzaOS',
-    shortName: 'PizzaOS',
+    name: 'Glaxy Pizzaria Delivery',
+    shortName: 'Glaxy',
     logo: null,
     logoName: null,
     theme: null
@@ -89,12 +97,11 @@
         titleEl.classList.add('hidden');
       } else {
         titleEl.classList.remove('hidden');
-        titleEl.textContent = t.shortName || t.name || 'PizzaOS';
+        titleEl.textContent = t.shortName || t.name || 'Glaxy';
       }
     }
 
-    const docTitle = t.name ? `${t.name} - PizzaOS` : 'PizzaOS';
-    document.title = docTitle;
+    document.title = t.name || 'Glaxy Pizzaria Delivery';
   };
 
   window.__PIZZAOS_TENANT__ = tenant;

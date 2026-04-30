@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glaxy Pizzaria Delivery</title>
+    <title>Pizzaria Glaxy Delivery</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -154,13 +154,6 @@
             </div>
             
             <div class="flex items-center gap-4">
-                <div class="hidden md:flex text-xs bg-gray-800 rounded-lg p-1">
-                    <button onclick="app.auth.requestAccess('customer')" id="role-customer" class="role-btn px-3 py-1 rounded transition">Cliente</button>
-                    <button onclick="app.auth.requestAccess('counter')" id="role-counter" class="role-btn px-3 py-1 rounded transition flex items-center gap-1"><i class="fa-solid fa-lock text-[10px] opacity-50"></i> PDV</button>
-                    <button onclick="app.auth.requestAccess('kitchen')" id="role-kitchen" class="role-btn px-3 py-1 rounded transition flex items-center gap-1"><i class="fa-solid fa-lock text-[10px] opacity-50"></i> Cozinha</button>
-                    <button onclick="app.auth.requestAccess('admin')" id="role-admin" class="role-btn px-3 py-1 rounded transition flex items-center gap-1"><i class="fa-solid fa-lock text-[10px] opacity-50"></i> Admin</button>
-                </div>
-                
                 <div id="user-info" class="hidden text-xs t-text-accent font-bold border t-border-accent px-2 py-1 rounded"></div>
 
                 <button onclick="app.toggleCart()" class="relative p-2 hover:bg-gray-800 rounded-full transition cart-trigger">
@@ -168,12 +161,6 @@
                     <span id="cart-count" class="absolute -top-1 -right-1 t-bg-primary text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full animate-bounce">0</span>
                 </button>
             </div>
-        </div>
-        <div class="md:hidden flex overflow-x-auto p-2 bg-gray-800 gap-2 text-xs">
-            <button onclick="app.auth.requestAccess('customer')" class="role-btn whitespace-nowrap px-3 py-1 bg-gray-700 rounded text-white">Cliente</button>
-            <button onclick="app.auth.requestAccess('counter')" class="role-btn whitespace-nowrap px-3 py-1 bg-gray-700 rounded text-white"><i class="fa-solid fa-lock text-[10px]"></i> PDV</button>
-            <button onclick="app.auth.requestAccess('kitchen')" class="role-btn whitespace-nowrap px-3 py-1 bg-gray-700 rounded text-white"><i class="fa-solid fa-lock text-[10px]"></i> KDS</button>
-            <button onclick="app.auth.requestAccess('admin')" class="role-btn whitespace-nowrap px-3 py-1 bg-gray-700 rounded text-white"><i class="fa-solid fa-lock text-[10px]"></i> Admin</button>
         </div>
     </nav>
 
@@ -189,7 +176,22 @@
             <a href="https://wa.me/5582993091738" target="_blank" class="text-gray-400 hover:text-green-600 transition text-xl"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="https://wa.me/5582993091738" target="_blank" class="text-gray-400 hover:text-blue-600 transition text-xl"><i class="fa-brands fa-facebook"></i></a>
         </div>
-        <p>&copy; 2026 Glaxy Pizzaria - O melhor pedaço do seu dia.</p>
+        <div class="flex justify-center items-center flex-wrap gap-2 text-[11px] text-gray-600 mt-2">
+            <span class="uppercase tracking-widest">Acesso</span>
+            <button onclick="app.auth.requestAccess('customer')" class="role-btn px-2 py-1 rounded border border-gray-300 bg-gray-100 hover:bg-gray-200 hover:text-gray-800 transition">
+                Cliente
+            </button>
+            <button onclick="app.auth.requestAccess('counter')" class="role-btn px-2 py-1 rounded border border-gray-300 bg-gray-100 hover:bg-gray-200 hover:text-gray-800 transition flex items-center gap-1">
+                <i class="fa-solid fa-lock text-[10px] opacity-60"></i> PDV
+            </button>
+            <button onclick="app.auth.requestAccess('kitchen')" class="role-btn px-2 py-1 rounded border border-gray-300 bg-gray-100 hover:bg-gray-200 hover:text-gray-800 transition flex items-center gap-1">
+                <i class="fa-solid fa-lock text-[10px] opacity-60"></i> Cozinha
+            </button>
+            <button onclick="app.auth.requestAccess('admin')" class="role-btn px-2 py-1 rounded border border-gray-300 bg-gray-100 hover:bg-gray-200 hover:text-gray-800 transition flex items-center gap-1">
+                <i class="fa-solid fa-lock text-[10px] opacity-60"></i> Admin
+            </button>
+        </div>
+        <p>&copy; 2026 Pizzaria Glaxy - O melhor pedaço do seu dia.</p>
     </footer>
 
     <!-- SIDEBAR CARRINHO -->
@@ -350,7 +352,7 @@
                     btn.classList.remove('t-bg-accent', 'text-black', 'font-bold');
                     btn.classList.add('text-white');
                     const btnText = btn.innerText.toLowerCase();
-                    const targetText = role === 'counter' ? 'pdv' : role === 'kitchen' ? 'kds' : role === 'customer' ? 'cliente' : 'admin';
+                    const targetText = role === 'counter' ? 'pdv' : role === 'kitchen' ? 'cozinha' : role === 'customer' ? 'cliente' : 'admin';
                     if(btnText.includes(targetText.toLowerCase())) {
                          btn.classList.add('t-bg-accent', 'text-black', 'font-bold');
                          btn.classList.remove('text-white');
@@ -607,7 +609,7 @@
                     content.innerHTML = `
                         <div class="bg-yellow-50 p-6 text-gray-800 font-mono text-sm relative w-full h-full flex flex-col">
                             <div class="text-center mb-4 border-b border-dashed border-gray-400 pb-4">
-                                <h3 class="text-xl font-bold uppercase tracking-widest">Glaxy</h3>
+                                <h3 class="text-xl font-bold uppercase tracking-widest">PIZZARIA GLAXY</h3>
                                 <p class="text-xs mt-2 font-bold">*** CUPOM NÃO FISCAL ***</p>
                             </div>
                             <div class="mb-4 text-xs space-y-1">

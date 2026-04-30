@@ -25,14 +25,14 @@
 
   const BUILTIN_TENANTS = {
     default: {
-      name: 'Glaxy Pizzaria Delivery',
+      name: 'Pizzaria Glaxy Delivery',
       shortName: 'Glaxy',
       logo: null,
       logoName: null,
       theme: { navBg: '#111827', navFg: '#ffffff', accent: '#facc15', primary: '#dc2626' }
     },
     glaxy: {
-      name: 'Glaxy Pizzaria Delivery',
+      name: 'Pizzaria Glaxy Delivery',
       shortName: 'GLAXY',
       logo: 'src/public/assets/logo/logo_glaxy.png',
       logoName: 'src/public/assets/logo/logo_name.png',
@@ -43,7 +43,7 @@
   const tenant = {
     id: tenantId,
     storagePrefix: `tenant:${tenantId}:`,
-    name: 'Glaxy Pizzaria Delivery',
+    name: 'Pizzaria Glaxy Delivery',
     shortName: 'Glaxy',
     logo: null,
     logoName: null,
